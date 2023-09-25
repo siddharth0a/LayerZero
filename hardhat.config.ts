@@ -51,7 +51,7 @@ const config: HardhatUserConfig = {
     polygon: {
       url: "https://rpc-mainnet.maticvigil.com",
       chainId: 137,
-      accounts: accounts(),
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
     arbitrum: {
       url: `https://arb1.arbitrum.io/rpc`,
@@ -72,7 +72,7 @@ const config: HardhatUserConfig = {
     goerli: {
       url: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
       chainId: 5,
-      accounts: accounts(),
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
     'bsc-testnet': {
       url: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
@@ -97,12 +97,17 @@ const config: HardhatUserConfig = {
     'optimism-goerli': {
       url: `https://goerli.optimism.io/`,
       chainId: 420,
-      accounts: accounts(),
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     },
     'fantom-testnet': {
       url: `https://rpc.testnet.fantom.network/`,
       chainId: 4002,
       accounts: accounts(),
+    },
+    worldland: {
+      url: `https://seoul.worldland.foundation`,
+      chainId: 103,
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
     }
   },
   paths: {
